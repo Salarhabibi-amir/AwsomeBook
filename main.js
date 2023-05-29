@@ -33,7 +33,7 @@ function displaybooks() {
         index++;
     });
     booklist.append(row);
-    //remove book
+    //Add event listener to remove button;
     const removebtn = document.querySelectorAll('.removeButton');
     console.log('this is remove button',removebtn);
     removebtn.forEach(element => {
@@ -42,9 +42,12 @@ function displaybooks() {
 }
 
 //remove book from the books
-function removeBook() {
-    console.log('runing removeBook')
-
+function removeBook(event) {
+    console.log('runing removeBook');
+    const indexToRemove = event.target.value;
+    books.splice(indexToRemove, 1);
+    displaybooks();
 }
+
 const addBookButton = document.querySelector('#addBook');
 addBookButton.addEventListener('click', addBooks);
