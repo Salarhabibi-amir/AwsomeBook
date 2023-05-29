@@ -13,11 +13,22 @@ const books = [
 
 //function to add books;
 function addBooks() {
-    console.log('running addBooks');
+    // console.log('running addBooks');
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
-    books.push(new BooksConstructor (title,author ) );
-    console.log(books);
+    books.push(new BooksConstructor(title, author));
+    displaybooks();
+}
+//displaying books
+function displaybooks() {
+    const booklist = document.querySelector('.booklist');
+    const row = document.createElement('tr');
+    books.forEach(element => {
+        row.innerHTML = ;
+    });
+
+    booklist.append(row);
+
 }
 
 const addBookButton = document.querySelector('#addBook');
