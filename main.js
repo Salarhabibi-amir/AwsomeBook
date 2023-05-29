@@ -17,29 +17,24 @@ function addBooks() {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     books.push(new BooksConstructor(title, author));
-    displaybooks();
+    display();
 }
 //displaying books
-function displaybooks() {
-    console.log("displaybooks running")
-    console.log(books);
-    const booklist = document.querySelector('.booklist');
-    const row = document.createElement('tr');
-    let index = 0;
-    books.forEach(element => {
-        const currentTitle = element.title;
-        const currentAuthor = element.author;
-        row.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
-        index++;
-    });
-    booklist.append(row);
-    //Add event listener to remove button;
-    const removebtn = document.querySelectorAll('.removeButton');
-    console.log('this is remove button', removebtn);
-    removebtn.forEach(element => {
-        element.addEventListener('click', removeBook);
-    });
-}
+
+function display() {
+    console.log('runing display')
+    const tbody = document.querySelector('.booklist');
+    tbody.innerHTML = '';
+     console.log(tbody);
+     let index = 0;
+     books.forEach(element => {
+         const currentRow = document.createElement('tr');
+         const currentTitle = element.title;
+         const currentAuthor = element.author;
+         currentRow.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
+         tbody.appendChild(currentRow);
+         index++
+     });
 
 //remove book from the books
 function removeBook(event) {
@@ -49,19 +44,13 @@ function removeBook(event) {
     display()
 }
 // display after removeing book
-function display() {
-    const booklist = document.querySelector('.booklist');
-    const row = document.createElement('tr');
-    booklist.innerHTML = '';
-    let index = 0;
-    books.forEach(element => {
-        const currentTitle = element.title;
-        const currentAuthor = element.author;
-        row.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
-        index++;
-    });
-    booklist.append(row);
 
+
+     const removebtn = document.querySelectorAll('.removeButton');
+     console.log('this is remove button', removebtn);
+     removebtn.forEach(element => {
+         element.addEventListener('click', removeBook);
+     });
 }
 const addBookButton = document.querySelector('#addBook');
 addBookButton.addEventListener('click', addBooks);
