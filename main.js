@@ -24,7 +24,9 @@ function displaybooks() {
     const booklist = document.querySelector('.booklist');
     const row = document.createElement('tr');
     books.forEach(element => {
-        row.innerHTML = ;
+        const currentTitle = element.title;
+        const currentAuthor = element.author;
+        row.innerHTML = `${currentTitle}<br>${currentAuthor} <button id='removeButton'>Remove</button> <hr>`;
     });
 
     booklist.append(row);
