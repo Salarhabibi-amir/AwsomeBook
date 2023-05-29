@@ -29,22 +29,21 @@ function displaybooks() {
     books.forEach(element => {
         const currentTitle = element.title;
         const currentAuthor = element.author;
-        row.innerHTML = `${currentTitle}<br>${currentAuthor} <button id='removeButton' value="${index}">Remove</button> <hr>`;
+        row.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
         index++;
     });
     booklist.append(row);
     //remove book
-    const removebtn = document.getElementById('removeButton');
-    removebtn.addEventListener('click', function() {
-        books.remove(removebtn.value);
-
-
-    })
-
+    const removebtn = document.querySelectorAll('.removeButton');
+    console.log('this is remove button',removebtn);
+    removebtn.forEach(element => {
+        element.addEventListener('click',removeBook);
+    });
 }
 
 //remove book from the books
 function removeBook() {
+    console.log('runing removeBook')
 
 }
 const addBookButton = document.querySelector('#addBook');
