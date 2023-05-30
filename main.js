@@ -11,13 +11,6 @@ const books = [
 
 ];
 
-// function to add books;
-function addBooks() {
-  const title = document.querySelector('#title').value;
-  const author = document.querySelector('#author').value;
-  books.push(new BooksConstructor(title, author));
-  display();
-}
 // displaying books
 
 function display() {
@@ -46,6 +39,15 @@ function display() {
     element.addEventListener('click', removeBook);
   });
 }
+
+// function to add books;
+function addBooks() {
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  books.push(new BooksConstructor(title, author));
+  display();
+}
+
 const addBookButton = document.querySelector('#addBook');
 addBookButton.addEventListener('click', addBooks);
 
