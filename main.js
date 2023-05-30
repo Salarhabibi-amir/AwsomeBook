@@ -31,6 +31,7 @@ function display() {
     const indexToRemove = event.target.value;
     books.splice(indexToRemove, 1);
     display();
+    saveInLocalStorage()
   }
   // display after removeing book
 
@@ -46,6 +47,7 @@ function addBooks() {
   const author = document.querySelector('#author').value;
   books.push(new BooksConstructor(title, author));
   display();
+  saveInLocalStorage()
 }
 
 const addBookButton = document.querySelector('#addBook');
@@ -69,3 +71,30 @@ if (browserTitle) {
 if (browserAuthor) {
   bookAuthor.value = browserAuthor;
 }
+
+/* --------Start Local Storage------------  */
+
+function getFromLocalStorage() {
+  const currentData = localStorage.getItem('books');
+  const getBooksData = JSON.parse(currentData);
+  console.log('getbooksDAta =', getBooksData);
+  if (getBooksData) { books.push(...getBooksData); }
+  console.log('books original array= ', books);
+  display();
+}
+
+function saveInLocalStorage() {
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+function validateLocalStorage() {
+  if (!localStorage.getItem('books')) {
+    saveInLocalStorage();
+  } else {
+    getFromLocalStorage();
+  }
+}
+
+validateLocalStorage();
+
+/* --------Ends Local Storage------------  */
