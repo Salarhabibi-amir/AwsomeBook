@@ -13,6 +13,31 @@ const books = [
 
 // displaying books
 
+/* --------Start Local Storage------------  */
+
+function getFromLocalStorage() {
+  const currentData = localStorage.getItem('books');
+  const getBooksData = JSON.parse(currentData);
+  if (getBooksData) { books.push(...getBooksData); }
+  display();
+}
+
+function saveInLocalStorage() {
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+function validateLocalStorage() {
+  if (!localStorage.getItem('books')) {
+    saveInLocalStorage();
+  } else {
+    getFromLocalStorage();
+  }
+}
+
+validateLocalStorage();
+
+/* --------Ends Local Storage------------  */
+
 function display() {
   const tbody = document.querySelector('.booklist');
   tbody.innerHTML = '';
@@ -71,28 +96,3 @@ if (browserTitle) {
 if (browserAuthor) {
   bookAuthor.value = browserAuthor;
 }
-
-/* --------Start Local Storage------------  */
-
-function getFromLocalStorage() {
-  const currentData = localStorage.getItem('books');
-  const getBooksData = JSON.parse(currentData);
-  if (getBooksData) { books.push(...getBooksData); }
-  display();
-}
-
-function saveInLocalStorage() {
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
-function validateLocalStorage() {
-  if (!localStorage.getItem('books')) {
-    saveInLocalStorage();
-  } else {
-    getFromLocalStorage();
-  }
-}
-
-validateLocalStorage();
-
-/* --------Ends Local Storage------------  */
