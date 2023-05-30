@@ -23,7 +23,7 @@ function display() {
     const currentAuthor = element.author;
     currentRow.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
     tbody.appendChild(currentRow);
-    index++;
+    index += 1;
   });
 
   // remove book from the books
