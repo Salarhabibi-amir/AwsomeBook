@@ -31,7 +31,7 @@ function display() {
     const indexToRemove = event.target.value;
     books.splice(indexToRemove, 1);
     display();
-    saveInLocalStorage()
+    saveInLocalStorage();
   }
   // display after removeing book
 
@@ -47,7 +47,7 @@ function addBooks() {
   const author = document.querySelector('#author').value;
   books.push(new BooksConstructor(title, author));
   display();
-  saveInLocalStorage()
+  saveInLocalStorage();
 }
 
 const addBookButton = document.querySelector('#addBook');
@@ -77,9 +77,7 @@ if (browserAuthor) {
 function getFromLocalStorage() {
   const currentData = localStorage.getItem('books');
   const getBooksData = JSON.parse(currentData);
-  console.log('getbooksDAta =', getBooksData);
   if (getBooksData) { books.push(...getBooksData); }
-  console.log('books original array= ', books);
   display();
 }
 
