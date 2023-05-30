@@ -26,7 +26,7 @@ function display() {
   });
 }
 
-/* --------Start Local Storage------------  */
+/* -------- Start Local Storage ------------  */
 
 function getFromLocalStorage() {
   const currentData = localStorage.getItem('books');
