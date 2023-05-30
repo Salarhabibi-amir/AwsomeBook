@@ -1,22 +1,38 @@
+
+
 // object constructor
-function BooksConstructor(
-  title,
-  author,
-) {
-  this.title = title;
-  this.author = author;
+class Books {
+  constructor () {
+    this.bookList = [];
+  }
+  addBook ( title, author ) {
+    this.bookList.push (
+      {'title':title, 'author':author}
+    )
+  }
 }
+
+/*TEST WITH OBJECTS*/
+
+const example = new Books;
+console.log('booklist',example.bookList)
+example.addBook('harri1', 'author 1');
+example.addBook('harri2', 'author 2');
+console.log(example.bookList)
+
+/*TEST WITH OBJECTS*/
 // all books will be saved into the next array;
-const books = [
+console.log('Real Project now')
 
-];
+const booksCollection = new Books;
 
-// displaying books
+
+// displaying booksCollection
 function display() {
   const tbody = document.querySelector('.booklist');
   tbody.innerHTML = '';
   let index = 0;
-  books.forEach((element) => {
+  booksCollection.forEach((element) => {
     const currentRow = document.createElement('tr');
     const currentTitle = element.title;
     const currentAuthor = element.author;
@@ -27,34 +43,34 @@ function display() {
 }
 
 /* -------- Start Local Storage ------------  */
-
+/*
 function getFromLocalStorage() {
-  const currentData = localStorage.getItem('books');
-  const getBooksData = JSON.parse(currentData);
-  if (getBooksData) { books.push(...getBooksData); }
+  const currentData = localStorage.getItem('booksCollection');
+  const getbooksCollectionData = JSON.parse(currentData);
+  if (getbooksCollectionData) { booksCollection.push(...getbooksCollectionData); }
   display();
 }
 
 function saveInLocalStorage() {
-  localStorage.setItem('books', JSON.stringify(books));
+  localStorage.setItem('booksCollection', JSON.stringify(booksCollection));
 }
 
 function validateLocalStorage() {
-  if (!localStorage.getItem('books')) {
+  if (!localStorage.getItem('booksCollection')) {
     saveInLocalStorage();
   } else {
     getFromLocalStorage();
   }
 }
 
-validateLocalStorage();
+validateLocalStorage();*/
 
 /* --------Ends Local Storage------------  */
 
-// remove book from the books
+// remove book from the booksCollection
 function removeBook(event) {
   const indexToRemove = event.target.value;
-  books.splice(indexToRemove, 1);
+  booksCollection.splice(indexToRemove, 1);
   display();
   saveInLocalStorage();
 
@@ -70,11 +86,11 @@ removebtn.forEach((element) => {
   element.addEventListener('click', removeBook);
 });
 
-// function to add books;
+// function to add booksCollection;
 function addBooks() {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  books.push(new BooksConstructor(title, author));
+  booksCollection.push(new BooksConstructor(title, author));
   display();
   saveInLocalStorage();
   const removebtn = document.querySelectorAll('.removeButton');
