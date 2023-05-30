@@ -19,8 +19,7 @@
 
 # 📖 [Awsome Book] <a name="about-project"></a>
 
-I have created this project for an English language education center based in Kabul, Afghanistan.
-
+This is a simple project which store the book's title and author into an array of object, and display all the books that is stored in array.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -28,7 +27,7 @@ I have created this project for an English language education center based in Ka
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://w3cshcool.com/">HTML , CSS,Bootstrap & JavaScript</a></li>
+    <li><a href="https://w3cshcool.com/">HTML & JavaScript</a></li>
   </ul>
 </details>
 
@@ -36,16 +35,17 @@ I have created this project for an English language education center based in Ka
 
 ### Key Features <a name="key-features"></a>
 
-- **[Responsive design]**
-- **[Attractive colors]**
+- **[Used DOM manipulation to implement task]**
+- **[Used Javascript objects to strore data]**
 - **[A wonderfull codeing stracture]**
+- **[Dividing the project into small pecies]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://salarhabibi-amir.github.io/Salarhabibi-amir.io)
+- [Live Demo Link](https://salarhabibi-amir.github.io/AwsomeBook/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
@@ -80,6 +80,10 @@ To run the project, execute the following command:
 - LinkedIn: [Amir Hussain Habibi](https://www.linkedin.com/in/amir-hussain-habibi-153688185/)
 
 - Portfolio:[ salarhabibi-amir ](https://salarhabibi-amir.github.io/)
+
+👤 **Author2**
+
+- GitHub: [@DiegoVidalLopez](https://github.com/Diegogagan2587)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
