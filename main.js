@@ -12,6 +12,19 @@ const books = [
 ];
 
 // displaying books
+function display() {
+  const tbody = document.querySelector('.booklist');
+  tbody.innerHTML = '';
+  let index = 0;
+  books.forEach((element) => {
+    const currentRow = document.createElement('tr');
+    const currentTitle = element.title;
+    const currentAuthor = element.author;
+    currentRow.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
+    tbody.appendChild(currentRow);
+    index += 1;
+  });
+}
 
 /* --------Start Local Storage------------  */
 
@@ -38,33 +51,24 @@ validateLocalStorage();
 
 /* --------Ends Local Storage------------  */
 
-function display() {
-  const tbody = document.querySelector('.booklist');
-  tbody.innerHTML = '';
-  let index = 0;
-  books.forEach((element) => {
-    const currentRow = document.createElement('tr');
-    const currentTitle = element.title;
-    const currentAuthor = element.author;
-    currentRow.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
-    tbody.appendChild(currentRow);
-    index += 1;
-  });
-
-  // remove book from the books
-  function removeBook(event) {
-    const indexToRemove = event.target.value;
-    books.splice(indexToRemove, 1);
-    display();
-    saveInLocalStorage();
-  }
-  // display after removeing book
+// remove book from the books
+function removeBook(event) {
+  const indexToRemove = event.target.value;
+  books.splice(indexToRemove, 1);
+  display();
+  saveInLocalStorage();
 
   const removebtn = document.querySelectorAll('.removeButton');
   removebtn.forEach((element) => {
     element.addEventListener('click', removeBook);
   });
+  // display after removeing book
 }
+
+const removebtn = document.querySelectorAll('.removeButton');
+removebtn.forEach((element) => {
+  element.addEventListener('click', removeBook);
+});
 
 // function to add books;
 function addBooks() {
@@ -73,6 +77,10 @@ function addBooks() {
   books.push(new BooksConstructor(title, author));
   display();
   saveInLocalStorage();
+  const removebtn = document.querySelectorAll('.removeButton');
+  removebtn.forEach((element) => {
+    element.addEventListener('click', removeBook);
+  });
 }
 
 const addBookButton = document.querySelector('#addBook');
