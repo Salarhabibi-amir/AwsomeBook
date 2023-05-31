@@ -3,19 +3,37 @@
 // object constructor
 class Books {
   constructor () {
-    const originalThis = this;
     this.bookList = [];
+
     const addBookButton = document.querySelector('#addBook');
-    addBookButton.addEventListener( 'click', this.addBook.bind(originalThis) );
+    addBookButton.addEventListener('click', this.addBook.bind(this));
+  }
+
+  addListeners () {
+    console.log('adding event listeners')
+    
+    const removebtn = document.querySelectorAll('.removeButton');
+    removebtn.forEach((element) => {
+      element.addEventListener('click', this.removeBook.bind(this));
+    });
+  }
+
+  removeBook (event) {
+    console.log('runing this.removeBook')
+    const indexToRemove = event.target.value;
+    this.bookList.splice(indexToRemove, 1);
+
+    this.display();
+    this.addListeners();
   }
 
   addBook ( ) {
     console.log('runing .addBook');
-    const title = document.querySelector('#title').value;
-    const author = document.querySelector('#author').value;
-     this.bookList.push ( {'title':title, 'author':author} );
-     console.log('Array to push =',this.bookList);
+    const addtitle = document.querySelector('#title').value;
+    const addauthor = document.querySelector('#author').value;
+     this.bookList.push ( {'title':addtitle, 'author':addauthor} );
      this.display();
+     this.addListeners();
   }
 
   display() {
@@ -23,7 +41,7 @@ class Books {
     const tbody = document.querySelector('.booklist');
     tbody.innerHTML = '';
     let index = 0;
-    console.log('bookList from this.dislplay=',this.bookList);
+    // console.log('bookList from this.dislplay=',this.bookList);
     this.bookList.forEach((element) => {
       const currentRow = document.createElement('tr');
       const currentTitle = element.title;
