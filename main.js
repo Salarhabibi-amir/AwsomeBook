@@ -3,23 +3,39 @@
 // object constructor
 class Books {
   constructor () {
+    const originalThis = this;
     this.bookList = [];
+    const addBookButton = document.querySelector('#addBook');
+    addBookButton.addEventListener( 'click', this.addBook.bind(originalThis) );
   }
-  addBook ( title, author ) {
-    this.bookList.push (
-      {'title':title, 'author':author}
-    )
+
+  addBook ( ) {
+    console.log('runing .addBook');
+    const title = document.querySelector('#title').value;
+    const author = document.querySelector('#author').value;
+     this.bookList.push ( {'title':title, 'author':author} );
+     console.log('Array to push =',this.bookList);
+     this.display();
+  }
+
+  display() {
+    console.log('runing this.display()');
+    const tbody = document.querySelector('.booklist');
+    tbody.innerHTML = '';
+    let index = 0;
+    console.log('bookList from this.dislplay=',this.bookList);
+    this.bookList.forEach((element) => {
+      const currentRow = document.createElement('tr');
+      const currentTitle = element.title;
+      const currentAuthor = element.author;
+      currentRow.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
+      tbody.appendChild(currentRow);
+      index += 1;
+    });
   }
 }
 
 /*TEST WITH OBJECTS*/
-
-const example = new Books;
-console.log('booklist',example.bookList)
-example.addBook('harri1', 'author 1');
-example.addBook('harri2', 'author 2');
-console.log(example.bookList)
-
 /*TEST WITH OBJECTS*/
 // all books will be saved into the next array;
 console.log('Real Project now')
@@ -99,24 +115,3 @@ function addBooks() {
   });
 }
 
-const addBookButton = document.querySelector('#addBook');
-addBookButton.addEventListener('click', addBooks);
-
-// presarving data to the local storage
-const bookTitle = document.getElementById('title');
-const bookAuthor = document.getElementById('author');
-bookTitle.addEventListener('keydown', () => {
-  localStorage.setItem('title', bookTitle.value);
-});
-bookAuthor.addEventListener('keydown', () => {
-  localStorage.setItem('Author', bookAuthor.value);
-});
-const browserTitle = localStorage.getItem('title');
-const browserAuthor = localStorage.getItem('Author');
-if (browserTitle) {
-  bookTitle.value = browserTitle;
-}
-
-if (browserAuthor) {
-  bookAuthor.value = browserAuthor;
-}
