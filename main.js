@@ -47,7 +47,7 @@ class Books {
       const currentRow = document.createElement('tr');
       const currentTitle = element.title;
       const currentAuthor = element.author;
-      currentRow.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
+      currentRow.innerHTML = `<div>"${currentTitle}"&nbsp;&nbsp<span>by</span>&nbsp;&nbsp ${currentAuthor}</div> <div><button class='removeButton' value="${index}">Remove</button></div> `;
       tbody.appendChild(currentRow);
       index += 1;
     });
