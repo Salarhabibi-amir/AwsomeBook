@@ -2,6 +2,43 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* -- Start Navigation Bar---*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  border: 2px solid black;
+}
+
+nav ul {
+  display: flex;
+  padding-left: 0;
+  justify-content: space-around;
+  width: 30%;
+}
+
+nav ul li {
+  padding: 2%;
+  padding-right: 4%;
+  border-right: 1px solid black;
+}
+
+nav ul li a {
+  color: black;
+}
+
+/* -- End Navigation Bar---*/
+
 .books h1 {
   text-align: center;
 }
