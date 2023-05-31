@@ -1,105 +1,122 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
-li {
-  list-style: none;
+nav ul li {
+    list-style: none;
 }
+
 
 /* -- Start Navigation Bar---*/
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 5%;
-  padding-right: 5%;
-  border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: 2px solid black;
 }
 
 nav ul {
-  display: flex;
-  padding-left: 0;
-  justify-content: space-around;
-  width: 30%;
+    display: flex;
+    padding-left: 0;
+    justify-content: space-around;
+    width: 30%;
 }
 
 nav ul li {
-  padding: 2%;
-  padding-right: 4%;
-  border-right: 1px solid black;
+    padding: 2%;
+    padding-right: 4%;
+    border-right: 1px solid black;
 }
 
 nav ul li a {
-  color: black;
+    color: black;
 }
+
 
 /* -- End Navigation Bar---*/
 
 .books h1 {
-  text-align: center;
+    text-align: center;
 }
 
 table {
-  width: 100%;
-  height: 100%;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 10px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .booklist tr {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
-  background-color: lightgray;
-  margin-bottom: 0.5rem;
-  padding: 10px;
-  border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: lightgray;
+    margin-bottom: 0.5rem;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .booklist tr div {
-  width: 50%;
+    width: 50%;
 }
 
 .removeButton {
-  float: right;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 5px;
+    float: right;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 hr {
-  margin-top: 2rem;
-  width: 100px;
-  background-color: black;
+    margin-top: 2rem;
+    width: 100px;
+    background-color: black;
 }
 
 fieldset {
-  width: 50%;
-  margin: 0 auto;
-  border: none;
+    width: 50%;
+    margin: 0 auto;
+    border: none;
 }
 
 legend {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
 }
 
 fieldset input {
-  padding: 10px;
-  width: 100%;
-  border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 fieldset button {
-  float: right;
-  padding: 10px 30px;
-  border-radius: 2px solid black;
+    float: right;
+    padding: 10px 30px;
+    border-radius: 2px solid black;
+}
+
+
+/* contact section */
+
+#contact {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact p {
+    margin: 0px;
 }
