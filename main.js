@@ -11,7 +11,6 @@ class Books {
 
   addListeners () {
     console.log('adding event listeners')
-    
     const removebtn = document.querySelectorAll('.removeButton');
     removebtn.forEach((element) => {
       element.addEventListener('click', this.removeBook.bind(this));
@@ -90,34 +89,4 @@ validateLocalStorage();*/
 /* --------Ends Local Storage------------  */
 
 // remove book from the booksCollection
-function removeBook(event) {
-  const indexToRemove = event.target.value;
-  booksCollection.splice(indexToRemove, 1);
-  display();
-  saveInLocalStorage();
-
-  const removebtn = document.querySelectorAll('.removeButton');
-  removebtn.forEach((element) => {
-    element.addEventListener('click', removeBook);
-  });
-  // display after removeing book
-}
-
-const removebtn = document.querySelectorAll('.removeButton');
-removebtn.forEach((element) => {
-  element.addEventListener('click', removeBook);
-});
-
-// function to add booksCollection;
-function addBooks() {
-  const title = document.querySelector('#title').value;
-  const author = document.querySelector('#author').value;
-  booksCollection.push(new BooksConstructor(title, author));
-  display();
-  saveInLocalStorage();
-  const removebtn = document.querySelectorAll('.removeButton');
-  removebtn.forEach((element) => {
-    element.addEventListener('click', removeBook);
-  });
-}
 
