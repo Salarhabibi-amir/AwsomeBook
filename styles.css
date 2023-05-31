@@ -6,6 +6,7 @@ a {
   text-decoration: none;
 }
 
+
 /* -- Start Navigation Bar--- */
 
 nav {
@@ -35,6 +36,7 @@ nav ul li {
 nav ul li a {
   color: black;
 }
+
 
 /* -- End Navigation Bar--- */
 
@@ -107,6 +109,7 @@ fieldset button {
   border-radius: 2px solid black;
 }
 
+
 /* contact section */
 
 .contact {
@@ -120,12 +123,16 @@ fieldset button {
   margin: 0;
 }
 
+
 /* Footer section */
 
 footer {
   border: 2px solid black;
   padding: 10px;
   border-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .hide {
