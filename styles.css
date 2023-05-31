@@ -10,8 +10,9 @@ a {
 /* -- Start Navigation Bar--- */
 
 nav {
-    <<<<<<< HEAD display: flex;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 5%;
     padding-right: 5%;
     border: 2px solid black;
@@ -21,22 +22,8 @@ nav ul {
     display: flex;
     padding-left: 0;
     justify-content: space-around;
-    width: 30%;
-    =======display: flex;
-    justify-content: space-between;
-    padding-left: 5%;
-    padding-right: 5%;
-    border: 2px solid black;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    padding-left: 0;
-    justify-content: space-around;
-    align-items: center;
     width: 40%;
-    >>>>>>>4fdd6848980097f7019ce20af79908310bf6fc70
+    align-items: center;
 }
 
 nav ul li {
