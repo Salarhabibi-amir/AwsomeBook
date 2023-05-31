@@ -14,15 +14,13 @@
     <header>
         <nav>
             <p>Awesome Books!</p>
-            <ul>
-                <li> <a href="#books-section">List</a></li>
-                <li> <a href="#form-add-book">Add New</a> </li>
-                <li> <a href="#contact">contact</a> </li>
+            <ul id="top-nav-ul">
+                <li class="top-nav-li" > <a class="nav-anchors" href="#books-section">List</a></li>
+                <li class="top-nav-li" > <a class="nav-anchors" href="#form-add-book">Add New</a> </li>
+                <li class="top-nav-li" > <a class="nav-anchors" href="#contact">contact</a> </li>
             </ul>
         </nav>
     </header>
-
-
     <section id="books-section" class="books">
         <table>
             <thead>
@@ -32,9 +30,9 @@
 
             </tbody>
         </table>
+        <hr>
     </section>
-    <hr>
-    <form id="form-add-book" action="">
+    <form id="form-add-book" class="form-add-book" action="">
         <fieldset>
             <legend>Add a New Book</legend>
 
@@ -51,7 +49,7 @@
 
     </form>
     <!-- Contact section -->
-    <section id="contact">
+    <section id="contact" class="contact">
         <h2>Contact Information</h2>
         <p>Do have any questions or you just want to say "Hello"?</p>
         <p>you can reach out to us!</p>
