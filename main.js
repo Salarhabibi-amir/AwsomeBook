@@ -44,19 +44,7 @@ const booksCollection = new Books;
 
 
 // displaying booksCollection
-function display() {
-  const tbody = document.querySelector('.booklist');
-  tbody.innerHTML = '';
-  let index = 0;
-  booksCollection.forEach((element) => {
-    const currentRow = document.createElement('tr');
-    const currentTitle = element.title;
-    const currentAuthor = element.author;
-    currentRow.innerHTML = `${currentTitle}<br>${currentAuthor} <button class='removeButton' value="${index}">Remove</button> <hr>`;
-    tbody.appendChild(currentRow);
-    index += 1;
-  });
-}
+
 
 /* -------- Start Local Storage ------------  */
 /*
