@@ -6,7 +6,7 @@ import { DateTime } from './modules/luxon.js';
 /* --Navigation Bar--*/
 const navAnchors = document.querySelectorAll('.nav-anchors');
 navAnchors.forEach((element) => {
-    element.addEventListener('click', hideOrShow);
+  element.addEventListener('click', hideOrShow);
 });
 /* --Navigation Bar--*/
 
