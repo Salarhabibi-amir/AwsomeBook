@@ -6,9 +6,6 @@ a {
   text-decoration: none;
 }
 
-
-/* -- Start Navigation Bar--- */
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -36,9 +33,6 @@ nav ul li {
 nav ul li a {
   color: black;
 }
-
-
-/* -- End Navigation Bar--- */
 
 .books h1 {
   text-align: center;
@@ -109,9 +103,6 @@ fieldset button {
   border-radius: 2px solid black;
 }
 
-
-/* contact section */
-
 .contact {
   display: flex;
   flex-direction: column;
@@ -123,9 +114,6 @@ fieldset button {
 .contact p {
   margin: 0;
 }
-
-
-/* Footer section */
 
 footer {
   border: 2px solid black;
